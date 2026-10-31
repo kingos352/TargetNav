@@ -42,6 +42,11 @@ public final class MainActivity extends Activity implements LocationListener {
     private volatile boolean serviceRunning=false;
     private SharedPreferences prefs;
     private static final int PICK=101, SAVE=102, LOC=103, NOTIFY=104;
+    /** Kabul edilen son konum; saglayici tahkimi bunun uzerinden yapilir. */
+    private Location lastAccepted;
+    // GNSS'ten mumkun olan en sik ornek istenir; cihaz kendi ust sinirina kirpar.
+    // Dikey hiz kestiriminin belirsizligi ornek sayisiyla azaldigi icin bu onemlidir.
+    private static final long GPS_INTERVAL_MS=200L, NETWORK_INTERVAL_MS=5000L, FIX_STALE_MS=10000L;
 
     @Override public void onCreate(Bundle saved) {
         super.onCreate(saved);
@@ -122,13 +127,28 @@ public final class MainActivity extends Activity implements LocationListener {
             boolean any=false;
             for(String provider:new String[]{LocationManager.GPS_PROVIDER,LocationManager.NETWORK_PROVIDER}){
                 if(provider.equals(LocationManager.GPS_PROVIDER)&&checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION)!=PackageManager.PERMISSION_GRANTED)continue;
-                if(locations.isProviderEnabled(provider)){locations.requestLocationUpdates(provider,1000L,0f,this);any=true;}
+                if(locations.isProviderEnabled(provider)){locations.requestLocationUpdates(provider,isGps(provider)?GPS_INTERVAL_MS:NETWORK_INTERVAL_MS,0f,this);any=true;}
             }
             if(!any)geoError(2,"Cihaz konumunu / GPS'i açın.");
             else startBackgroundService();
         }catch(SecurityException e){geoError(1,"Konum izni gerekli.");}catch(Exception e){geoError(2,"Konum sağlayıcısı kullanılamıyor.");}
     }
-    private void stopLocation(){if(locations!=null)locations.removeUpdates(this);stopBackgroundService();}
+    private void stopLocation(){if(locations!=null)locations.removeUpdates(this);lastAccepted=null;stopBackgroundService();}
+    private static boolean isGps(String provider){return LocationManager.GPS_PROVIDER.equals(provider);}
+    /**
+     * GPS ve NETWORK saglayicilari ayni anda dinlenir. Tahkim olmadan, dogrulugu
+     * kilometrelerle olculen ve irtifa tasimayan bir sebeke konumu taze bir GNSS
+     * fix'ini ezer; bu da hiz, yon ve dikey hiz kestirimini bozar.
+     */
+    private static boolean betterFix(Location candidate,Location current){
+        if(candidate==null)return false;
+        if(current==null)return true;
+        long delta=candidate.getTime()-current.getTime();
+        if(delta>FIX_STALE_MS)return true;   // eldeki konum bayatladi
+        if(delta<0)return false;             // geriye giden zaman damgasi
+        // GNSS tek irtifa kaynagidir; taze GPS fix'i sebeke konumuyla degistirilmez.
+        return !(isGps(current.getProvider())&&!isGps(candidate.getProvider()));
+    }
     private boolean backgroundEnabled(){return prefs.getBoolean("background",true);}
     private void startBackgroundService(){
         if(!backgroundEnabled()||serviceRunning||!locationAllowed())return;
@@ -151,10 +171,14 @@ public final class MainActivity extends Activity implements LocationListener {
     private void js(String code){if(web!=null&&trusted(Uri.parse(web.getUrl()==null?START:web.getUrl())))web.evaluateJavascript(code,null);}
     private void geoError(int code,String text){js("window.TargetNavNative&&window.TargetNavNative.error("+code+","+JSONObject.quote(text)+")");}
     @Override public void onLocationChanged(Location l){
+        if(!betterFix(l,lastAccepted))return;
+        lastAccepted=l;
         try{
             JSONObject c=new JSONObject();c.put("latitude",l.getLatitude());c.put("longitude",l.getLongitude());c.put("accuracy",l.hasAccuracy()?l.getAccuracy():9999);
             c.put("altitude",l.hasAltitude()?l.getAltitude():JSONObject.NULL);c.put("altitudeAccuracy",l.hasVerticalAccuracy()?l.getVerticalAccuracyMeters():JSONObject.NULL);
             c.put("speed",l.hasSpeed()?l.getSpeed():JSONObject.NULL);c.put("heading",l.hasBearing()?l.getBearing():JSONObject.NULL);
+            // Sayfa, sebeke konumunu GNSS fix'inden ayirt edebilsin.
+            c.put("provider",l.getProvider()==null?JSONObject.NULL:l.getProvider());c.put("gnss",isGps(l.getProvider()));
             JSONObject p=new JSONObject();p.put("coords",c);p.put("timestamp",l.getTime());js("window.TargetNavNative&&window.TargetNavNative.position("+p.toString()+")");
         }catch(Exception e){geoError(2,"Konum verisi işlenemedi.");}
     }

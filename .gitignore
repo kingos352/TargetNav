@@ -16,5 +16,5 @@ runtime/
 .DS_Store
 Thumbs.db
 
-# Yarim inmis vendor dosyalari
-web/dist/vendor/ocr/.*.Xk65Kg
+# Yarim inmis / gecici vendor indirmeleri (her iki agacta)
+**/vendor/ocr/.*.wasm.js.*
