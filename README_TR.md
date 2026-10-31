@@ -1,15 +1,18 @@
-# TargetNav — Tam proje 1.1.1
+# TargetNav — Tam proje 1.2.0
 
-Web ve Android arayüz kaynakları 1.1.1 sürümünde birleştirildi. Web yayın sürümü: 19.
+Web ve Android arayüz kaynakları 1.2.0 sürümünde birleştirildi. Web yayın sürümü: 20.
 Web: https://aerostat-competition-assistant.mlhykskky.chatgpt.site
 
 ## İçerik
 
 - web/: Yayımlanan web sürümünün tüm takip edilen kaynakları, dist, görseller, paketli kütüphaneler ve testler.
 - android/: Android Studio projesi; Java GPS/WebView/dosya köprüsü, konum servisi, kaynaklar ve paketlenmiş web dosyaları.
-- apk/TargetNav-1.1.1-test.apk: İmzalı test APK’sı, versionCode 13.
+- apk/TargetNav-1.2.0-test.apk: İmzalı test APK’sı, versionCode 14.
 - competition-originals/: Kaynak paketteki altı özgün Kapadokya yarışma dosyası.
 - tools/sync-web-to-android.py: Web değişikliklerini Android’e, yerel köprüleri koruyarak aktarır.
+  Her Android yaması uygulandıktan sonra doğrulanır; çengel metni değişmişse betik hata verip durur.
+  web/dist’ten silinen dosyalar Android ağacından da temizlenir.
+- tools/generate-file-hashes.py: FILE_HASHES.json üretir. --check ile yazmadan doğrular.
 - VERSION.json: Sürüm ve doğrulama bilgileri. FILE_HASHES.json: Dosya SHA-256 listesi.
 
 ## Android Studio
@@ -39,6 +42,30 @@ ardından Android Studio’dan yeniden derleyin. Java/izin değişiklikleri andr
 web/.openai/hosting.json mevcut yayının kimliğidir; yeni bir siteye taşırken yayın kimliğini ayrıca ayarlayın.
 Git erişim kimlik bilgileri, node_modules, Android SDK ve derleme önbellekleri pakette yoktur.
 
+## 1.2.0 değişiklikleri
+
+Telemetriye dikey hız (vario) eklendi. GPS irtifası gürültülü olduğu için ardışık örneklerin
+farkı kullanılmaz; 20 saniyelik kayan pencereye ağırlıklı en küçük kareler doğrusu uydurulup
+eğimi alınır. Ağırlıklar cihazın bildirdiği dikey doğruluktan gelir, artık saçılımı belirsizliği
+büyütür ve medyan mutlak sapma ile aykırı irtifa sıçramaları elenir. Belirsizlik 0,45 m/sn
+eşiğini aşarsa sayı gösterilmez. Etikette belirsizlik, ipucunda örnek sayısı, pencere ve
+yaklaşık 10 saniyelik gecikme yazar. Dikey hız GPS irtifasına dayanır; barometrik değildir.
+
+Android tarafında GPS ve şebeke sağlayıcıları arasında tahkim eklendi. Önceden ikisi birden
+dinleniyor ve en son gelen konum kazanıyordu; doğruluğu yüzlerce metre olan ve irtifa taşımayan
+bir şebeke konumu taze uydu sabitini eziyordu. Artık taze bir GNSS sabiti şebeke konumuyla
+değiştirilmez. GPS örnek aralığı 1000 ms yerine 200 ms istenir. Konum verisine sağlayıcı bilgisi
+eklendi; GNSS alıcısı bulunmayan cihazlarda şebeke konumu GPS gibi görünmez.
+
+Çevrimdışı kurulum iki katmana ayrıldı. Kurulum yalnız çekirdek kabuğu bekler (1,27 MB);
+OCR ve PDF dosyaları (18,97 MB) aktivasyondan sonra arka planda iner. Tembel yükleme değildir:
+OCR’ı çevrimiçiyken hiç açmayan pilot sahada çevrimdışı da kullanabilir. Önbellekteki kabuk
+dosyaları artık önce önbellekten verilir, böylece zayıf bağlantıda her istek ağ zaman aşımını
+beklemez.
+
+Dağıtılan pakete hiçbir kodun yüklemediği 11 MB’lık dosya karışmıştı; temizlendi. APK 15,66 MB
+yerine 10,71 MB. Test fixture’ı olan Kapadokya NTAMAP dosyası web/tests/fixtures altına taşındı.
+
 ## 1.1.1 değişiklikleri
 
 Uçuş kaydı durdurulduğunda cihaza kaydetme, KML rota aktarımı ve JSON yedek indirme penceresi açılır.
@@ -50,7 +77,7 @@ Web ve APK dosyaları ortak arayüz sürümünü kullanır; Android köprü fark
 
 ## Doğrulama ve sınırlar
 
-81 web testi, 4 yerel GPS köprü testi geçti. APK web varlıkları Android kaynaklarıyla byte düzeyinde eşleşir.
+98 web testi, 4 yerel GPS köprü testi geçti. APK web varlıkları Android kaynaklarıyla byte düzeyinde eşleşir.
 Web önizlemesinde logo geçişi, plan paneline dönüş ve uçuş KML düğmesi kontrol edildi.
 Fiziksel tablet ve uçuş testi yapılmadı. Arka plan servisi mevcut olsa da konum/kayıt Activity/WebView’e
 bağlıdır; ekran kilidi veya süreç sonlanmasında kesintisiz kayıt garantisi verilmez.
