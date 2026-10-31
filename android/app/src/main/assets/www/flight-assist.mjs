@@ -95,6 +95,9 @@ export function preflightIssues(s,{online=true,offlineMap=false,android=false,ba
  }
  if(!online&&!offlineMap&&s.base!=='offline'&&!race?.mapType)issues.push('İnternet yok ve çevrimdışı harita yüklü değil; harita boş görünebilir.');
  if(android&&!background)issues.push('Arka plan konumu kapalı: Balloon Live’a geçince konum ve rüzgâr kaydı durur.');
+ // Yerel köprü yoksa (tarayıcı/iOS) arka planda kayıt teknik olarak mümkün değildir;
+ // pilot bunu kalkıştan önce bilmeli, uçuş sırasında fark etmemeli.
+ if(!android)issues.push('Tarayıcı sürümünde arka plan kaydı yok: ekran kilitlenirse veya uygulamadan çıkarsanız rota, rüzgâr ve dikey hız kaydı durur. Otomatik kilidi kapatın ve uygulamayı önde tutun.');
  return issues;
 }
 

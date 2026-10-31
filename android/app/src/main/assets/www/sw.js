@@ -1,7 +1,7 @@
 // Fetch is CACHE-FIRST for every precached path below, so a deployed client keeps serving the
 // cached copy until the cache name changes. BUMP `CACHE` WHENEVER ANY PRECACHED FILE CHANGES
 // (html/css/mjs/vendor/assets/races/competitions/samples), otherwise pilots keep a stale shell.
-const VERSION=30;
+const VERSION=31;
 const CACHE='aerostat-shell-v'+VERSION;
 // CORE: awaited by `install`. Everything needed for the app to boot and navigate offline (~1.3 MB).
 const CORE=['./','./index.html','./style.css','./theme.css','./app.mjs','./confirm-action.mjs','./flight-assist.mjs','./flight-export.mjs','./race-core.mjs','./races/kapadokya-2026.json','./race-import.mjs','./race-layers.mjs','./flight-navigation.mjs','./core.mjs','./global-coordinates.mjs','./regional-reference.mjs','./wind-profile.mjs','./vertical-speed.mjs','./barometer.mjs','./pdf-reader.mjs','./competitions.json','./samples/slovenia-flight1.json','./assets/targetnav-logo-dark.png','./assets/targetnav-icon-dark.png','./assets/targetnav-logo-light.png','./assets/targetnav-icon-light.png','./assets/targetnav-app-180.png','./assets/targetnav-app-192.png','./assets/targetnav-app-512.png','./manifest.webmanifest','./vendor/leaflet.js','./vendor/leaflet.css','./vendor/proj4.js','./vendor/geodesic.js','./vendor/index.js','./vendor/images/layers.png','./vendor/images/layers-2x.png','./vendor/images/marker-icon.png','./vendor/images/marker-icon-2x.png','./vendor/images/marker-shadow.png'];
