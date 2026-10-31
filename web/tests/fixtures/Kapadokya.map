@@ -1,0 +1,58 @@
+OziExplorer Map Data File Version 2.2
+Kapadokya
+E:\My Documents\Baloni\2026\Turkish 2026\map\Kapadokya.jpg
+1 ,Map Code,
+WGS 84,,   0.0000,   0.0000,WGS 84
+Reserved 1
+Reserved 2
+Magnetic Variation,,,E
+Map Projection,(UTM) Universal Transverse Mercator,PolyCal,No,AutoCalOnly,No,BSBUseWPX,No
+Point01,xy,    0,    0,in, deg,    ,        ,,    ,        ,, grid, 36,650729.40797486,4293715.4568453,N
+Point02,xy, 7148, 7298,in, deg,    ,        ,,    ,        ,, grid, 36,679279.40797486,4264565.4568453,N
+Point03,xy,     ,     ,in, deg,    ,        ,,    ,        ,, grid,   ,           ,           ,
+Point04,xy,     ,     ,in, deg,    ,        ,,    ,        ,, grid,   ,           ,           ,
+Point05,xy,     ,     ,in, deg,    ,        ,,    ,        ,, grid,   ,           ,           ,
+Point06,xy,     ,     ,in, deg,    ,        ,,    ,        ,, grid,   ,           ,           ,
+Point07,xy,     ,     ,in, deg,    ,        ,,    ,        ,, grid,   ,           ,           ,
+Point08,xy,     ,     ,in, deg,    ,        ,,    ,        ,, grid,   ,           ,           ,
+Point09,xy,     ,     ,in, deg,    ,        ,,    ,        ,, grid,   ,           ,           ,
+Point10,xy,     ,     ,in, deg,    ,        ,,    ,        ,, grid,   ,           ,           ,
+Point11,xy,     ,     ,in, deg,    ,        ,,    ,        ,, grid,   ,           ,           ,
+Point12,xy,     ,     ,in, deg,    ,        ,,    ,        ,, grid,   ,           ,           ,
+Point13,xy,     ,     ,in, deg,    ,        ,,    ,        ,, grid,   ,           ,           ,
+Point14,xy,     ,     ,in, deg,    ,        ,,    ,        ,, grid,   ,           ,           ,
+Point15,xy,     ,     ,in, deg,    ,        ,,    ,        ,, grid,   ,           ,           ,
+Point16,xy,     ,     ,in, deg,    ,        ,,    ,        ,, grid,   ,           ,           ,
+Point17,xy,     ,     ,in, deg,    ,        ,,    ,        ,, grid,   ,           ,           ,
+Point18,xy,     ,     ,in, deg,    ,        ,,    ,        ,, grid,   ,           ,           ,
+Point19,xy,     ,     ,in, deg,    ,        ,,    ,        ,, grid,   ,           ,           ,
+Point20,xy,     ,     ,in, deg,    ,        ,,    ,        ,, grid,   ,           ,           ,
+Point21,xy,     ,     ,in, deg,    ,        ,,    ,        ,, grid,   ,           ,           ,
+Point22,xy,     ,     ,in, deg,    ,        ,,    ,        ,, grid,   ,           ,           ,
+Point23,xy,     ,     ,in, deg,    ,        ,,    ,        ,, grid,   ,           ,           ,
+Point24,xy,     ,     ,in, deg,    ,        ,,    ,        ,, grid,   ,           ,           ,
+Point25,xy,     ,     ,in, deg,    ,        ,,    ,        ,, grid,   ,           ,           ,
+Point26,xy,     ,     ,in, deg,    ,        ,,    ,        ,, grid,   ,           ,           ,
+Point27,xy,     ,     ,in, deg,    ,        ,,    ,        ,, grid,   ,           ,           ,
+Point28,xy,     ,     ,in, deg,    ,        ,,    ,        ,, grid,   ,           ,           ,
+Point29,xy,     ,     ,in, deg,    ,        ,,    ,        ,, grid,   ,           ,           ,
+Point30,xy,     ,     ,in, deg,    ,        ,,    ,        ,, grid,   ,           ,           ,
+Projection Setup,     0.000000000,    15.000000000,     0.999900000,       500000.00,     -5000000.00,    34.000000000,    40.500000000,,,
+Map Feature = MF ; Map Comment = MC     These follow if they exist
+Track File = TF      These follow if they exist
+Moving Map Parameters = MM?    These follow if they exist
+MM0,Yes
+MMPNUM,4
+MMPXY,1,0,0
+MMPXY,2,7148,0
+MMPXY,3,7148,7298
+MMPXY,4,0,7298
+MMPLL,1,  34.735250,  38.779300
+MMPLL,2,  35.063749,  38.773959
+MMPLL,3,  35.056230,  38.511430
+MMPLL,4,  34.728926,  38.516721
+MM1B,3.994159
+MOP,Map Open Position,0,0
+MOPLL,Map Open Position,0.0000000,0.0000000,25
+IWH,Map Image Width/Height,7148,7298
+MLP,Map Last Position,38.6195394,34.9495346,20

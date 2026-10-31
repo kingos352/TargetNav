@@ -1,0 +1,20 @@
+{
+  "version": "1.1.1",
+  "versionCode": 13,
+  "web_version": 19,
+  "web_source_commit": "3a2a084f437b8f6fc1bc27a48f0b6a2aec5f958d",
+  "apk_sha256": "04e40709f1760c4913b449a61e861b492d8f444a05908fad4997d53f48cc4aeb",
+  "web_tests": 81,
+  "native_bridge_tests": 4,
+  "device_runtime_tested": false,
+  "android_assets_match_apk": true,
+  "java_dex_matches_distributed_apk": "not_reverified_in_this_export",
+  "original_competition_files": [
+    "CLAs.wpt",
+    "Kapadokya.jgw",
+    "Kapadokya.jpg",
+    "Kapadokya.map",
+    "Kapadokya.ntamap",
+    "PZ List Final.xlsx"
+  ]
+}

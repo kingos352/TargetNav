@@ -1,0 +1,25 @@
+plugins { id 'com.android.application' }
+android {
+    namespace 'com.targetnav.app'
+    compileSdk 35
+    defaultConfig {
+        applicationId 'com.targetnav.app'
+        minSdk 26
+        targetSdk 35
+        versionCode 13
+        versionName '1.1.1'
+    }
+    signingConfigs {
+        testBuild {
+            storeFile rootProject.file('targetnav-test.jks')
+            storePassword 'android'
+            keyAlias 'targetnav-test'
+            keyPassword 'android'
+        }
+    }
+    buildTypes {
+        debug { signingConfig signingConfigs.testBuild }
+        release { minifyEnabled false }
+    }
+    compileOptions { sourceCompatibility JavaVersion.VERSION_1_8; targetCompatibility JavaVersion.VERSION_1_8 }
+}

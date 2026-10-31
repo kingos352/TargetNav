@@ -1,0 +1,83 @@
+[
+  {
+    "id": "turkiye2026",
+    "name": "Türkiye 2026 · Kapadokya",
+    "match": [
+      "Türkiye Hot Air Balloon Championship",
+      "Turkiye Hot Air Balloon Championship"
+    ],
+    "year": 2026,
+    "timeZone": "Europe/Istanbul",
+    "center": [
+      38.645,
+      34.83
+    ],
+    "dates": "4–7 Kasım 2026",
+    "noticeboard": "https://watchmefly.net/events/event.php?e=turkiye2026&v=enb",
+    "tasksUrl": "https://watchmefly.net/events/event.php?e=turkiye2026&v=t",
+    "checked": "26 Ekim 2026",
+    "status": "SHM bölgesel referansı · resmî yarışma haritası bekleniyor",
+    "sources": [
+      "https://watchmefly.net/assets/uploads/enb/turkiye2026_rules%202026%20tur.pdf"
+    ],
+    "grid": {
+      "id": "turkiye2026",
+      "zone": 36,
+      "band": "S",
+      "hemisphere": "N",
+      "baseE": 600000,
+      "baseN": 4200000,
+      "unit": 10,
+      "crs": "+proj=utm +zone=36 +datum=WGS84 +units=m +no_defs",
+      "source": "Kapadokya SHM A/B/C sektör koordinatları (26.10.2026), WGS84 / UTM 36 kuzey. 100 km blok: E600000 N4200000; 4/4 birimi 10 m. Sektörlerin UTM dış kapsamı yalnızca kısa koordinat çözümlemek için kullanılır; resmî yarışma sınırı, PZ veya uçuş izni değildir.",
+      "verified": true,
+      "shortReady": true,
+      "provisional": true,
+      "referenceRevision": "shm-kapadokya-2026-10-26",
+      "bounds": {
+        "minE": 653663,
+        "maxE": 669432,
+        "minN": 4269174,
+        "maxN": 4288465
+      },
+      "sourceUrl": "https://shmkapadokya.kapadokya.edu.tr/sectors",
+      "coordinateSourceUrl": "https://shmkapadokya.kapadokya.edu.tr/xml/sectors.xml"
+    }
+  },
+  {
+    "id": "slovenia2026",
+    "name": "Slovenya–Macaristan 2026 · Murska Sobota",
+    "match": [
+      "Open Slovenian and Hungarian",
+      "Murska Sobota"
+    ],
+    "year": 2026,
+    "timeZone": "Europe/Ljubljana",
+    "center": [
+      46.635,
+      16.175
+    ],
+    "sources": [
+      "https://watchmefly.net/assets/uploads/enb/slovenia2026_rules%202026sihu.pdf",
+      "https://watchmefly.net/assets/uploads/enb/slovenia2026_gb%20information1.pdf"
+    ],
+    "grid": {
+      "id": "slovenia2026",
+      "zone": 33,
+      "band": "T",
+      "hemisphere": "N",
+      "baseE": 500000,
+      "baseN": 5100000,
+      "unit": 10,
+      "crs": "+proj=utm +zone=33 +datum=WGS84 +units=m +no_defs",
+      "source": "Slovenia 2026 Event Rules II.1 (33T harita kapsamı) ve II.23 (WGS84, 4/4 biçimi); 24 Haziran genel brifingi incelendi.",
+      "verified": true,
+      "bounds": {
+        "minE": 564000,
+        "maxE": 610000,
+        "minN": 5150000,
+        "maxN": 5180000
+      }
+    }
+  }
+]

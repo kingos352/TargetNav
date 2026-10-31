@@ -1,0 +1,6 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {documentKind,readFileBytes} from '../dist/pdf-reader.mjs';
+const pdf=new TextEncoder().encode('%PDF-1.7\nexample').buffer;
+test('Android extensionless PDF identified by header even with octet-stream MIME',()=>{assert.equal(documentKind({name:'document:4832',type:'application/octet-stream'},pdf),'pdf');assert.equal(documentKind({name:'görev_föyü',type:''},pdf),'pdf');});
+test('MIME and extension work for PDF; text and images retain their own import paths',()=>{const empty=new ArrayBuffer(0);assert.equal(documentKind({name:'x',type:'application/pdf'},empty),'pdf');assert.equal(documentKind({name:'X.PDF',type:''},empty),'pdf');assert.equal(documentKind({name:'x.txt',type:''},empty),'text');assert.equal(documentKind({name:'scan.jpg',type:'image/jpeg'},empty),'image');});
+test('File.arrayBuffer path preserves the chosen file bytes',async()=>{assert.equal(await readFileBytes({arrayBuffer:async()=>pdf}),pdf);});
+test('FileReader fallback supports WebViews without Blob.arrayBuffer',async()=>{const old=globalThis.FileReader;globalThis.FileReader=class{readAsArrayBuffer(file){this.result=file.bytes;queueMicrotask(()=>this.onload());}};try{assert.equal(await readFileBytes({bytes:pdf}),pdf);}finally{if(old===undefined)delete globalThis.FileReader;else globalThis.FileReader=old;}});

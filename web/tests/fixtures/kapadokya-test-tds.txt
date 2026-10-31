@@ -1,0 +1,64 @@
+TargetNav
+KAPADOKYA | TASK DATA SHEET
+TEST / ÖRNEK - RESMÎ YARIŞMA BELGESİ DEĞİLDİR
+Turkiye Hot Air Balloon Championship 2026 - SOFTWARE TEST / NOT OFFICIAL
+Flight 1 | 25/10/2026
+Launch period 06:00 - 06:30 | QNH: 1016 hPa (yalnız test)
+Time zone: Europe/Istanbul (UTC+03:00)
+Coordinates: WGS84 decimal degrees; latitude, longitude. UTM: zone 36N.
+Tüm hedefler Kapadokya bölgesinde seçilmiş yapay test noktalarıdır. İrtifalar ölçülmemiştir. QNH güncel meteoroloji
+verisi değildir. Kalkış alanı veya uçuş izni tanımlanmaz.
+Task 1 - JDG
+Judge Declared Goal
+Goal 38.642000, 34.823000 · 4200 ft
+İrtifa referansı: MSL (örnek değer)
+Marker Color: blue
+Marker Drop: free
+Logger Marker: 1
+MMA R30 m
+Scoring period ends at 07:15:00
+Mavi hedef, 30 m çember ve feet dönüşümünü kontrol edin.
+Task 2 - HWZ
+Hesitation Waltz
+Goal A 38.665000, 34.842000 · 4300 ft
+İrtifa referansı: MSL (örnek değer)
+Goal B 38.682000, 34.861000 · 4400 ft
+İrtifa referansı: MSL (örnek değer)
+Goal C 38.655000, 34.870000 · 4250 ft
+İrtifa referansı: MSL (örnek değer)
+Marker Color: yellow
+Marker Drop: free
+Logger Marker: 2
+MMA R50 m
+Scoring period ends at 07:45:00
+Üç alternatif hedefin tamamı yüklenmeli. Hedef seçimi ve mesafe/yön ekranını deneyin.
+Yalnız yazılım testi. Uçuş, hava durumu veya saha uygunluğu bilgisi değildir. 1 / 2
+TargetNav
+KAPADOKYA | TASK DATA SHEET
+TEST / ÖRNEK - RESMÎ YARIŞMA BELGESİ DEĞİLDİR
+Flight 1 - Kapadokya test föyü (devam)
+MSL irtifalar ve tüm saatler test amaçlıdır.
+Task 3 - CRT
+Calculated Rate of Approach Task
+Goal 38.701000, 34.846000 · 4350 ft
+İrtifa referansı: MSL (örnek değer)
+Marker Color: green
+Marker Drop: free
+Logger Marker: 3
+MMA R50 m
+Scoring period ends at 08:00:00
+Örnek zaman pencereleri: 07:00-07:15 ve 07:30-07:45. Yalnız veri okuma testi; resmî puanlama talimatı değildir.
+Task 4 - FIN
+Fly In
+Goal 38.715000, 34.865000 · 4450 ft
+İrtifa referansı: MSL (örnek değer)
+Marker Color: red
+Marker Drop: free
+Logger Marker: 4
+MMA R100 m
+Scoring period ends at 08:15:00
+Kırmızı hedef, 100 m çember ve yerel kayıt/yeniden açılış kontrolü.
+Yükleme kontrolü: 4 görev, 6 hedef. Renkler: blue / yellow / green / red. Doğrulama ekranında tüm görevleri tek
+tek kontrol edip işaretleyin. Fiziksel MMA çemberlerini görmek için çember seçeneğini açın. Görevler
+sekmesinden “Haritada gör” ile hedefleri bulun.
+Yalnız yazılım testi. Uçuş, hava durumu veya saha uygunluğu bilgisi değildir. 2 / 2

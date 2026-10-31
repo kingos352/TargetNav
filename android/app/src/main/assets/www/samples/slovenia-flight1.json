@@ -1,0 +1,170 @@
+{
+  "sha256": "e850a162314f4cbdcf2345d64c101e4bda9dab43f5da6c01a10db4f5e43ffd9d",
+  "profileId": "slovenia2026",
+  "sourceUrl": "https://watchmefly.net/assets/uploads/enb/tds1_1782353344.pdf",
+  "reviewedAt": "2026-10-17",
+  "flight": {
+    "name": "Flight 1",
+    "date": "2026-06-25",
+    "launchArea": "Individual launch",
+    "launchStart": "05:02",
+    "launchEnd": "06:00",
+    "minLaunchDistanceM": 1000,
+    "sunrise": "05:02",
+    "sunset": "20:54",
+    "qnh": 1019,
+    "pzs": "all active",
+    "nextBriefing": "18:00",
+    "timeZone": "Europe/Ljubljana"
+  },
+  "tasks": [
+    {
+      "number": 1,
+      "code": "PDG",
+      "goals": [],
+      "coords": [],
+      "marker": "",
+      "logger": "1",
+      "markerDrop": "",
+      "mmaRadius": null,
+      "end": "07:00:00",
+      "cancelled": false,
+      "raw": "Task 1 - PDG",
+      "notes": "Pilotun bildireceği iki hedef. Hedef irtifası 1000 ft üstünde. Deklarasyon/logger işlemi resmî cihazda yapılır.",
+      "details": {
+        "declaration": "Loggergoal #1 ve #2, kalkıştan önce",
+        "goalCount": "2",
+        "launchLimits": "Deklarasyon noktası → hedef en az 1 km; üst sınır yok",
+        "goalLimits": "Direktör hedeflerinden en az 500 m"
+      },
+      "verified": false,
+      "loggerGoal": "1 & 2",
+      "order": "any"
+    },
+    {
+      "number": 2,
+      "code": "JDG",
+      "goals": [
+        {
+          "coord": "9116/6847",
+          "altitude": 185.928,
+          "altitudeOriginal": 610,
+          "altitudeUnit": "ft",
+          "heightRef": "MSL",
+          "label": ""
+        }
+      ],
+      "coords": [
+        "9116/6847"
+      ],
+      "marker": "blue",
+      "logger": "2",
+      "markerDrop": "free",
+      "mmaRadius": 30,
+      "end": "07:30:00",
+      "cancelled": false,
+      "raw": "Task 2 - JDG\nGoal  9116/6847 · 610 ft\nMarker Color: blue\nMarker Drop: free\nLogger Marker: 2\nMMA R30 m\nScoring period ends at 07:30:00",
+      "notes": "",
+      "details": {},
+      "verified": false,
+      "order": "in"
+    },
+    {
+      "number": 3,
+      "code": "CRT",
+      "goals": [
+        {
+          "coord": "9012/6484",
+          "altitude": 182.88,
+          "altitudeOriginal": 600,
+          "altitudeUnit": "ft",
+          "heightRef": "MSL",
+          "label": ""
+        }
+      ],
+      "coords": [
+        "9012/6484"
+      ],
+      "marker": "green",
+      "logger": "3",
+      "markerDrop": "free",
+      "mmaRadius": 50,
+      "end": "08:00:00",
+      "cancelled": false,
+      "notes": "Gri MMA alanında (hedef hariç) fiziksel marker yalnız xx:00:00–xx:15:00 ve xx:30:00–xx:45:00 aralıklarında puanlanır. Hedef üzerindeki fiziksel marker ve tüm yarışma alanındaki logger markı, puanlama süresi boyunca değerlendirilebilir.",
+      "details": {
+        "windows": "xx:00:00–xx:15:00 ve xx:30:00–xx:45:00",
+        "area": "Gri MMA; hedef istisnası ve logger şartları için kaynak TDS"
+      },
+      "verified": false,
+      "order": "in"
+    },
+    {
+      "number": 4,
+      "code": "HWZ",
+      "goals": [
+        {
+          "coord": "9029/6191",
+          "altitude": 181.05120000000002,
+          "altitudeOriginal": 594,
+          "altitudeUnit": "ft",
+          "heightRef": "MSL",
+          "label": "A"
+        },
+        {
+          "coord": "9113/6179",
+          "altitude": 181.05120000000002,
+          "altitudeOriginal": 594,
+          "altitudeUnit": "ft",
+          "heightRef": "MSL",
+          "label": "B"
+        },
+        {
+          "coord": "8779/6267",
+          "altitude": 181.05120000000002,
+          "altitudeOriginal": 594,
+          "altitudeUnit": "ft",
+          "heightRef": "MSL",
+          "label": "C"
+        }
+      ],
+      "coords": [
+        "9029/6191",
+        "9113/6179",
+        "8779/6267"
+      ],
+      "marker": "orange",
+      "logger": "4",
+      "markerDrop": "gravity",
+      "mmaRadius": 30,
+      "end": "08:30:00",
+      "cancelled": false,
+      "raw": "Task 4 - HWZ\nGoal A 9029/6191 · 594 ft\nGoal B 9113/6179 · 594 ft\nGoal C 8779/6267 · 594 ft\nMarker Color: orange\nMarker Drop: gravity\nLogger Marker: 4\nMMA R30 m\nScoring period ends at 08:30:00",
+      "notes": "",
+      "details": {},
+      "verified": false,
+      "order": "in"
+    },
+    {
+      "number": 5,
+      "code": "LRN",
+      "goals": [],
+      "coords": [],
+      "marker": "",
+      "logger": "5, 6, 7",
+      "markerDrop": "",
+      "mmaRadius": null,
+      "end": "09:00:00",
+      "cancelled": false,
+      "notes": "A: logger mark #5. B: #6, A’dan sonra ve C’den önce. C: #7, A’dan en geç 45 dakika sonra. Alan: tüm yarışma alanı.",
+      "details": {
+        "abc": "A=#5, B=#6, C=#7",
+        "duration": "C, A’dan en geç 45 dakika sonra",
+        "area": "entire contest area"
+      },
+      "verified": false,
+      "order": "in"
+    }
+  ],
+  "text": "Task 1 - PDG\n\nMarker Color: \nMarker Drop: \nLogger Marker: 1\nScoring period ends at 07:00:00\nPilotun bildireceği iki hedef. Hedef irtifası 1000 ft üstünde. Deklarasyon/logger işlemi resmî cihazda yapılır.\n\nTask 2 - JDG\nGoal  9116/6847 · 610 ft\nMarker Color: blue\nMarker Drop: free\nLogger Marker: 2\nMMA R30 m\nScoring period ends at 07:30:00\n\n\nTask 3 - CRT\nGoal  9012/6484 · 600 ft\nMarker Color: green\nMarker Drop: free\nLogger Marker: 3\nMMA R50 m\nScoring period ends at 08:00:00\nGri MMA alanında (hedef hariç) fiziksel marker yalnız xx:00:00–xx:15:00 ve xx:30:00–xx:45:00 aralıklarında puanlanır. Hedef üzerindeki fiziksel marker ve tüm yarışma alanındaki logger markı, puanlama süresi boyunca değerlendirilebilir.\n\nTask 4 - HWZ\nGoal A 9029/6191 · 594 ft\nGoal B 9113/6179 · 594 ft\nGoal C 8779/6267 · 594 ft\nMarker Color: orange\nMarker Drop: gravity\nLogger Marker: 4\nMMA R30 m\nScoring period ends at 08:30:00\n\n\nTask 5 - LRN\n\nMarker Color: \nMarker Drop: \nLogger Marker: 5, 6, 7\nScoring period ends at 09:00:00\nA: logger mark #5. B: #6, A’dan sonra ve C’den önce. C: #7, A’dan en geç 45 dakika sonra. Alan: tüm yarışma alanı."
+}
